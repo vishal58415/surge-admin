@@ -1,0 +1,672 @@
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-inner slimscroll">
+    <form action="search" class="mobile-view">
+      <input class="form-control" type="text" placeholder="Search here" />
+      <button class="btn" type="button"><i class="fa fa-search"></i></button>
+    </form>
+    <div id="sidebar-menu" class="sidebar-menu">
+      <ul>
+        <li class="nav-item nav-profile">
+          <a href="#" class="nav-link">
+            <div class="nav-profile-image">
+              <img src="assets/img/profiles/avatar-17.jpg" alt="profile" />
+            </div>
+            <div class="nav-profile-text d-flex flex-column">
+              <span class="font-weight-bold mb-2">David Grey. H</span>
+              <span class="text-white text-small">Project Manager</span>
+            </div>
+          </a>
+        </li>
+        <li class="menu-title">
+          <span>Main</span>
+        </li>
+        <li class="submenu">
+          <a href="#"
+            ><i class="feather-home"></i> <span> Dashboard</span>
+            <span class="menu-arrow"></span
+          ></a>
+          <ul class="sub-menus">
+            <li>
+              <a
+                href="<%- routes.deals_dashboard %>"
+                class="<%= active_path==routes.deals_dashboard ? 'active' : '' %>"
+                >Deals Dashboard</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.projects_dashboard %>"
+                class="<%= active_path==routes.projects_dashboard ? 'active' : '' %>"
+                >Projects Dashboard</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.leads_dashboard %>"
+                class="<%= active_path==routes.leads_dashboard ? 'active' : '' %>"
+                >Leads Dashboard</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a
+            href="<%- routes.tasks %>"
+            class="<%= active_path==routes.tasks ? 'active' : '' %>"
+            ><i class="feather-check-square"></i> <span>Tasks</span></a
+          >
+        </li>
+        <li>
+          <a
+            href="<%- routes.contacts %>"
+            class="<%= active_path==routes.contacts ? 'active' : '' %>"
+            ><i class="feather-smartphone"></i> <span>Contacts</span></a
+          >
+        </li>
+        <li>
+          <a
+            href="<%- routes.companies %>"
+            class="<%= active_path==routes.companies ? 'active' : '' %>"
+            ><i class="feather-database"></i> <span>Companies</span></a
+          >
+        </li>
+        <li>
+          <a
+            href="<%- routes.leads %>"
+            class="<%= active_path==routes.leads || active_path==routes.leads_kanban_view ? 'active' : '' %>"
+            ><i class="feather-user"></i> <span>Leads</span></a
+          >
+        </li>
+
+        <li>
+          <a
+            href="<%- routes.deals %>"
+            class="<%= active_path==routes.deals || active_path==routes.deals_kanban_view ? 'active' : '' %>"
+            ><i class="feather-radio"></i> <span>Deals</span></a
+          >
+        </li>
+        <li>
+          <a
+            href="<%- routes.projects %>"
+            class="<%= active_path==routes.projects || active_path==routes.projects_kanban_view ? 'active' : '' %>"
+            ><i class="feather-grid"></i> <span>Projects</span></a
+          >
+        </li>
+        <li>
+          <a
+            href="<%- routes.reports %>"
+            class="<%= active_path==routes.reports ? 'active' : '' %>"
+            ><i class="feather-bar-chart-2"></i> <span>Reports</span></a
+          >
+        </li>
+        <li>
+          <a
+            href="<%- routes.activities %>"
+            class="<%= active_path==routes.activities ? 'active' : '' %>"
+            ><i class="feather-calendar"></i> <span>Activities</span></a
+          >
+        </li>
+        <li class="submenu">
+          <a href="#"
+            ><i class="feather-grid"></i> <span> Blogs</span>
+            <span class="menu-arrow"></span>
+          </a>
+          <ul class="sub-menus">
+            <li>
+              <a
+                href="<%- routes.blog %>"
+                class="<%= active_path==routes.blog || active_path==routes.blog_details || active_path==routes.pending_blog ? 'active' : '' %>"
+                >All Blogs</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.add_blog %>"
+                class="<%= active_path==routes.add_blog ? 'active' : '' %>"
+                >Add Blog</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.edit_blog %>"
+                class="<%= active_path==routes.edit_blog ? 'active' : '' %>"
+                >Edit Blog</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.blog_Categories %>"
+                class="<%= active_path==routes.blog_Categories ? 'active' : '' %>"
+                >Categories</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="submenu">
+          <a href="#"
+            ><i class="feather-clipboard"></i> <span> Invoices </span>
+            <span class="menu-arrow"></span
+          ></a>
+          <ul class="sub-menus">
+            <li>
+              <a
+                href="<%- routes.invoices %>"
+                class="<%= active_path==routes.invoices ||active_path==routes.invoices_paid ||active_path==routes.invoices_overdue ||active_path==routes.invoices_draft ||active_path==routes.invoices_recurring ||active_path==routes.invoices_cancelled ? 'active' : '' %>"
+                >Invoices List</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.invoice_grid %>"
+                class="<%= active_path==routes.invoice_grid ? 'active' : '' %>"
+                >Invoices Grid</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.add_invoice %>"
+                class="<%= active_path==routes.add_invoice ? 'active' : '' %>"
+                >Add Invoices</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.edit_invoice %>"
+                class="<%= active_path==routes.edit_invoice ? 'active' : '' %>"
+                >Edit Invoices</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.view_invoice %>"
+                class="<%= active_path==routes.view_invoice ? 'active' : '' %>"
+                >Invoices Details</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.invoices_settings %>"
+                class="<%= active_path==routes.invoices_settings ||active_path==routes.tax_settings ||active_path==routes.bank_settings ? 'active' : '' %>"
+                >Invoices Settings</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a
+            href="<%- routes.email %>"
+            class="<%= active_path==routes.email ? 'active' : '' %>"
+            ><i class="feather-mail"></i> <span>Email</span></a
+          >
+        </li>
+        <li>
+          <a
+            href="<%- routes.settings %>"
+            class="<%= active_path==routes.settings ||active_path==routes.localization_details ||active_path==routes.payment_settings ||active_path==routes.email_settings ||active_path==routes.social_settings ||active_path==routes.social_links ||active_path==routes.seo_settings ||active_path==routes.others_settings ? 'active' : '' %>"
+            ><i class="feather-settings"></i> <span>Settings</span></a
+          >
+        </li>
+
+        <li class="menu-title">
+          <span>Pages</span>
+        </li>
+
+        <li class="submenu">
+          <a href="#"
+            ><i class="feather-alert-triangle"></i> <span> Error Pages </span>
+            <span class="menu-arrow"></span
+          ></a>
+          <ul class="sub-menus">
+            <li>
+              <a
+                href="<%- routes.pageNotFount %>"
+                class="<%= active_path==routes.error_404 ? 'active' : '' %>"
+                >404 Error
+              </a>
+            </li>
+            <li>
+              <a
+                href="<%- routes.serverError %>"
+                class="<%= active_path==routes.error_500 ? 'active' : '' %>"
+                >500 Error
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="submenu">
+          <a href="#"
+            ><i class="feather-list"></i> <span> Pages </span>
+            <span class="menu-arrow"></span
+          ></a>
+          <ul class="sub-menus">
+            <li>
+              <a
+                href="<%- routes.faq %>"
+                class="<%= active_path==routes.faq ? 'active' : '' %>"
+              >
+                FAQ
+              </a>
+            </li>
+            <li>
+              <a
+                href="<%- routes.terms %>"
+                class="<%= active_path==routes.terms ? 'active' : '' %>"
+              >
+                Terms
+              </a>
+            </li>
+            <li>
+              <a
+                href="<%- routes.privacy_policy %>"
+                class="<%= active_path==routes.privacy_policy ? 'active' : '' %>"
+              >
+                Privacy Policy
+              </a>
+            </li>
+            <li>
+              <a
+                href="<%- routes.blank_page %>"
+                class="<%= active_path==routes.blank_page ? 'active' : '' %>"
+              >
+                Blank Page
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="menu-title">
+          <span>UI Interface</span>
+        </li>
+        <li>
+          <a
+            href="<%- routes.components %>"
+            class="<%= active_path==routes.components ? 'active' : '' %>"
+            ><i class="feather-layout"></i> <span>Components</span></a
+          >
+        </li>
+        <li class="submenu">
+          <a href="#"
+            ><i class="feather feather-box"></i> <span>Elements </span>
+            <span class="menu-arrow"></span
+          ></a>
+          <ul class="sub-menus">
+            <li>
+              <a
+                href="<%- routes.sweetalerts %>"
+                class="<%= active_path==routes.sweetalerts ? 'active' : '' %>"
+                >Sweet Alerts</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.tooltip %>"
+                class="<%= active_path==routes.tooltip ? 'active' : '' %>"
+                >Tooltip</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.popover %>"
+                class="<%= active_path==routes.popover ? 'active' : '' %>"
+                >Popover</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.ribbon %>"
+                class="<%= active_path==routes.ribbon ? 'active' : '' %>"
+                >Ribbon</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.clipboard %>"
+                class="<%= active_path==routes.clipboard ? 'active' : '' %>"
+                >Clipboard</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.drag_drop %>"
+                class="<%= active_path==routes.drag_drop ? 'active' : '' %>"
+                >Drag & Drop</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.rangeslider %>"
+                class="<%= active_path==routes.rangeslider ? 'active' : '' %>"
+                >Range Slider</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.rating %>"
+                class="<%= active_path==routes.rating ? 'active' : '' %>"
+                >Rating</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.toastr %>"
+                class="<%= active_path==routes.toastr ? 'active' : '' %>"
+                >Toastr</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.text_editor %>"
+                class="<%= active_path==routes.text_editor ? 'active' : '' %>"
+                >Text Editor</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.counter %>"
+                class="<%= active_path==routes.counter ? 'active' : '' %>"
+                >Counter</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.scrollbar %>"
+                class="<%= active_path==routes.scrollbar ? 'active' : '' %>"
+                >Scrollbar</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.spinner %>"
+                class="<%= active_path==routes.spinner ? 'active' : '' %>"
+                >Spinner</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.notification %>"
+                class="<%= active_path==routes.notification ? 'active' : '' %>"
+                >Notification</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.lightbox %>"
+                class="<%= active_path==routes.lightbox ? 'active' : '' %>"
+                >Lightbox</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.stickynote %>"
+                class="<%= active_path==routes.stickynote ? 'active' : '' %>"
+                >Sticky Note</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.timeline %>"
+                class="<%= active_path==routes.timeline ? 'active' : '' %>"
+                >Timeline</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.horizontal_timeline %>"
+                class="<%= active_path==routes.horizontal_timeline ? 'active' : '' %>"
+                >Horizontal Timeline</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.form_wizard %>"
+                class="<%= active_path==routes.form_wizard ? 'active' : '' %>"
+                >Form Wizard</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="submenu">
+          <a href="#"
+            ><i class="feather feather-bar-chart-2"></i> <span> Charts </span>
+            <span class="menu-arrow"></span
+          ></a>
+          <ul class="sub-menus">
+            <li>
+              <a
+                href="<%- routes.chart_apex %>"
+                class="<%= active_path==routes.chart_apex ? 'active' : '' %>"
+                >Apex Charts</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.chart_js %>"
+                class="<%= active_path==routes.chart_js ? 'active' : '' %>"
+                >Chart Js</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.chart_morris %>"
+                class="<%= active_path==routes.chart_morris ? 'active' : '' %>"
+                >Morris Charts</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.chart_flot %>"
+                class="<%= active_path==routes.chart_flot ? 'active' : '' %>"
+                >Flot Charts</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.chart_peity %>"
+                class="<%= active_path==routes.chart_peity ? 'active' : '' %>"
+                >Peity Charts</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.chart_c3 %>"
+                class="<%= active_path==routes.chart_c3 ? 'active' : '' %>"
+                >C3 Charts</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="submenu">
+          <a href="#"
+            ><i class="feather feather-award"></i> <span> Icons </span>
+            <span class="menu-arrow"></span
+          ></a>
+          <ul class="sub-menus">
+            <li>
+              <a
+                href="<%- routes.icon_fontawesome %>"
+                class="<%= active_path==routes.icon_fontawesome ? 'active' : '' %>"
+                >Fontawesome Icons</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.icon_feather %>"
+                class="<%= active_path==routes.icon_feather ? 'active' : '' %>"
+                >Feather Icons</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.icon_ionic %>"
+                class="<%= active_path==routes.icon_ionic ? 'active' : '' %>"
+                >Ionic Icons</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.icon_material %>"
+                class="<%= active_path==routes.icon_material ? 'active' : '' %>"
+                >Material Icons</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.icon_pe7 %>"
+                class="<%= active_path==routes.icon_pe7 ? 'active' : '' %>"
+                >Pe7 Icons</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.icon_simpleline %>"
+                class="<%= active_path==routes.icon_simpleline ? 'active' : '' %>"
+                >Simpleline Icons</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.icon_themify %>"
+                class="<%= active_path==routes.icon_themify ? 'active' : '' %>"
+                >Themify Icons</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.icon_weather %>"
+                class="<%= active_path==routes.icon_weather ? 'active' : '' %>"
+                >Weather Icons</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.icon_typicon %>"
+                class="<%= active_path==routes.icon_typicon ? 'active' : '' %>"
+                >Typicon Icons</a
+              >
+            </li>
+            <li>
+              <a
+                href="<%- routes.icon_flag %>"
+                class="<%= active_path==routes.icon_flag ? 'active' : '' %>"
+                >Flag Icons</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="submenu">
+          <a href="#"
+            ><i class="feather-credit-card"></i> <span> Forms </span>
+            <span class="menu-arrow"></span
+          ></a>
+          <ul class="sub-menus">
+            <li>
+              <a
+                href="<%- routes.form_basic_inputs %>"
+                class="<%= active_path==routes.form_basic_inputs ? 'active' : '' %>"
+                >Basic Inputs
+              </a>
+            </li>
+            <li>
+              <a
+                href="<%- routes.form_input_groups %>"
+                class="<%= active_path==routes.form_input_groups ? 'active' : '' %>"
+                >Input Groups
+              </a>
+            </li>
+            <li>
+              <a
+                href="<%- routes.form_horizontal %>"
+                class="<%= active_path==routes.form_horizontal ? 'active' : '' %>"
+                >Horizontal Form
+              </a>
+            </li>
+            <li>
+              <a
+                href="<%- routes.form_vertical %>"
+                class="<%= active_path==routes.form_vertical ? 'active' : '' %>"
+              >
+                Vertical Form
+              </a>
+            </li>
+            <li>
+              <a
+                href="<%- routes.form_mask %>"
+                class="<%= active_path==routes.form_mask ? 'active' : '' %>"
+              >
+                Form Mask
+              </a>
+            </li>
+            <li>
+              <a
+                href="<%- routes.form_validation %>"
+                class="<%= active_path==routes.form_validation ? 'active' : '' %>"
+              >
+                Form Validation
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="submenu">
+          <a href="#"
+            ><i class="feather-box"></i> <span> Tables </span>
+            <span class="menu-arrow"></span
+          ></a>
+          <ul class="sub-menus">
+            <li>
+              <a
+                href="<%- routes.tables_basic %>"
+                class="<%= active_path==routes.tables_basic ? 'active' : '' %>"
+                >Basic Tables
+              </a>
+            </li>
+            <li>
+              <a
+                href="<%- routes.data_tables %>"
+                class="<%= active_path==routes.data_tables ? 'active' : '' %>"
+                >Data Table
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="menu-title">
+          <span>Extras</span>
+        </li>
+
+        <li class="submenu">
+          <a href="javascript:void(0);"
+            ><i class="feather-command"></i> <span>Multi Level</span>
+            <span class="menu-arrow"></span
+          ></a>
+          <ul class="sub-menus">
+            <li class="submenu">
+              <a href="javascript:void(0);">
+                <span>Level 1</span> <span class="menu-arrow"></span
+              ></a>
+              <ul class="sub-menus">
+                <li>
+                  <a href="javascript:void(0);"><span>Level 2</span></a>
+                </li>
+                <li class="submenu">
+                  <a href="javascript:void(0);">
+                    <span> Level 2</span> <span class="menu-arrow"></span
+                  ></a>
+                  <ul class="sub-menus">
+                    <li><a href="javascript:void(0);">Level 3</a></li>
+                    <li><a href="javascript:void(0);">Level 3</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="javascript:void(0);"> <span>Level 2</span></a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="javascript:void(0);"> <span>Level 1</span></a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

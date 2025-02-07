@@ -1,104 +1,104 @@
-const public_routes = {};
+export const public_routes: any = {};
 
 // ------------- ( Main ) --------------------
 
-public_routes.deals_dashboard = "/index"; 
+public_routes.deals_dashboard = "/index";
 
-public_routes.projects_dashboard = "/project-dashboard"; 
+public_routes.projects_dashboard = "/project-dashboard";
 
-public_routes.leads_dashboard = "/leads-dashboard"; 
+public_routes.leads_dashboard = "/leads-dashboard";
 
-public_routes.tasks = "/tasks"; 
-public_routes.tasks_important = "/tasks-important"; 
-public_routes.tasks_completed = "/tasks-completed"; 
+public_routes.tasks = "/tasks";
+public_routes.tasks_important = "/tasks-important";
+public_routes.tasks_completed = "/tasks-completed";
 
-public_routes.proposals = "/proposals"; 
-public_routes.proposals_grid = "/proposals-grid"; 
+public_routes.proposals = "/proposals";
+public_routes.proposals_grid = "/proposals-grid";
 
-public_routes.contracts = "/contracts"; 
-public_routes.contracts_grid = "/contracts-grid"; 
+public_routes.contracts = "/contracts";
+public_routes.contracts_grid = "/contracts-grid";
 
-public_routes.estimations = "/estimations"; 
-public_routes.estimations_kanban = "/estimations-kanban"; 
+public_routes.estimations = "/estimations";
+public_routes.estimations_kanban = "/estimations-kanban";
 
-public_routes.payments = "/payments"; 
+public_routes.payments = "/payments";
 
-public_routes.contacts = "/contacts"; 
+public_routes.contacts = "/contacts";
 
-public_routes.contact_grid = "/contact-grid"; 
+public_routes.contact_grid = "/contact-grid";
 
-public_routes.contact_details = "/contact-details"; 
+public_routes.contact_details = "/contact-details";
 
-public_routes.companies = "/companies"; 
+public_routes.companies = "/companies";
 
-public_routes.companies_grid = "/companies-grid"; 
+public_routes.companies_grid = "/companies-grid";
 
-public_routes.companies_details = "/company-details"; 
+public_routes.companies_details = "/company-details";
 
-public_routes.leads = "/leads"; 
+public_routes.leads = "/leads";
 
-public_routes.leads_kanban_view = "/leads-kanban"; 
+public_routes.leads_kanban_view = "/leads-kanban";
 
-public_routes.leads_details = "/leads-details"; 
+public_routes.leads_details = "/leads-details";
 
-public_routes.deals = "/deals"; 
+public_routes.deals = "/deals";
 
-public_routes.deals_details = "/deals-details"; 
+public_routes.deals_details = "/deals-details";
 
-public_routes.deals_kanban_view = "/deals-kanban"; 
+public_routes.deals_kanban_view = "/deals-kanban";
 
-public_routes.projects = "/projects"; 
+public_routes.projects = "/projects";
 
-public_routes.projects_grid = "/project-grid"; 
+public_routes.projects_grid = "/project-grid";
 
-public_routes.projects_details = "/project-details"; 
+public_routes.projects_details = "/project-details";
 
-public_routes.lead_reports = "/lead-reports"; 
-public_routes.deal_reports = "/deal-reports"; 
-public_routes.contact_reports = "/contact-reports"; 
-public_routes.company_reports = "/company-reports"; 
-public_routes.project_reports = "/project-reports"; 
-public_routes.task_reports = "/task-reports"; 
-public_routes.industry = "/industry"; 
-public_routes.contact_stage = "/contact-stage"; 
-public_routes.lost_reason = "/lost-reason"; 
-public_routes.sources = "/sources"; 
-public_routes.calls = "/calls"; 
+public_routes.lead_reports = "/lead-reports";
+public_routes.deal_reports = "/deal-reports";
+public_routes.contact_reports = "/contact-reports";
+public_routes.company_reports = "/company-reports";
+public_routes.project_reports = "/project-reports";
+public_routes.task_reports = "/task-reports";
+public_routes.industry = "/industry";
+public_routes.contact_stage = "/contact-stage";
+public_routes.lost_reason = "/lost-reason";
+public_routes.sources = "/sources";
+public_routes.calls = "/calls";
 
-public_routes.activities = "/activities"; 
-public_routes.activity_meeting = "/activity-meeting"; 
-public_routes.activity_task = "/activity-task"; 
-public_routes.activity_mail = "/activity-mail"; 
-public_routes.activity_calls = "/activity-calls"; 
+public_routes.activities = "/activities";
+public_routes.activity_meeting = "/activity-meeting";
+public_routes.activity_task = "/activity-task";
+public_routes.activity_mail = "/activity-mail";
+public_routes.activity_calls = "/activity-calls";
 
 
-public_routes.blog = "/blog"; 
+public_routes.blog = "/blog";
 
-public_routes.blog_details = "/blog-details"; 
+public_routes.blog_details = "/blog-details";
 
-public_routes.pending_blog = "/pending-blog"; 
+public_routes.pending_blog = "/pending-blog";
 
-public_routes.add_blog = "/add-blog"; 
+public_routes.add_blog = "/add-blog";
 
-public_routes.edit_blog = "/edit-blog"; 
+public_routes.edit_blog = "/edit-blog";
 
-public_routes.blog_Categories = "/blog-Categories"; 
+public_routes.blog_Categories = "/blog-Categories";
 
-public_routes.invoices = "/invoices"; 
+public_routes.invoices = "/invoices";
 
-public_routes.invoice_grid = "/invoice-grid"; 
+public_routes.invoice_grid = "/invoice-grid";
 
 // public_routes.email = "/email"; 
 
-public_routes.mail_view = "/mail-view"; 
+public_routes.mail_view = "/mail-view";
 
-public_routes.settings = "/settings"; 
-
-
-public_routes.email_settings = "/email-settings"; 
+public_routes.settings = "/settings";
 
 
- 
+public_routes.email_settings = "/email-settings";
+
+
+
 // --------------- ( Error Pages ) --------------
 
 public_routes.pageNotFount = "/error-404";
@@ -335,12 +335,6 @@ public_routes.countries = "/countries";
 public_routes.tickets = "/tickets";
 public_routes.contact_messages = "/contact-messages";
 
-
-
-
-
-
-
 public_routes.login = "/login";
 
 public_routes.register = "/register";
@@ -349,5 +343,8 @@ public_routes.forgot_password = "/forgot-password";
 
 public_routes.profile = "/profile";
 
+export const index = "index";
 
-module.exports = public_routes
+export const index_layout = "index";
+export const index_without_nav_layout = "index-without-nav";
+export const index_error_layout = "index-error";

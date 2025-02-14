@@ -1,6 +1,0 @@
-.vscode/*
-node_modules/*
-dist/*
-logs/* 
-newrelic_agent.log
-package-lock.json

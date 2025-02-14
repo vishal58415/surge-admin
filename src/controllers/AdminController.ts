@@ -1,46 +1,58 @@
-import Environment from "../config/global";
+import Environment from "../configs/global";
 import { Request, Response, NextFunction, response } from "express";
 const baseUrl = Environment.baseUrl;
 import * as url from "url";
 const url_path_identifier = ".";
-import config from "../config/global";
+import config from "../configs/global";
 import moment from "moment";
+import { customLog } from "../lib/customLogger";
+import { logger } from "../lib/logger";
 
 console.log(" baseUrlenv " + process.env.NODE_ENV);
 
-export class AdminController {
+export const createNewNote = async (
+  req: any,
+  res: any,
+  next: any
+) => {
+  let response_msg = "emsg=Something went wrong in createNewNote";
 
-  public player_search = async (req: Request, res: Response) => {
-    let response_result = {};
+  try {
+    let reqBody = req.body;
+    customLog("reqBody: " + " | " + JSON.stringify(reqBody));
 
-    let url_parts = url.parse(req.url, true);
+    const nObj: any = {};
+    nObj['title'] = reqBody.note_title;
+    nObj['description'] = reqBody.note_description;
+    nObj['link'] = (reqBody.note_link) ? (decodeURI(reqBody.note_link)) : "#";
+    customLog("nObj: " + " | " + JSON.stringify(nObj));
 
-    let reset_url = url_path_identifier + url_parts.pathname;
+  } catch (error: any) {
+    logger.error("createNewNote : " + " | " + error.stack?.toString());
+  }
+  let red_url = "/manage-notes?" + response_msg;
+  res.redirect(red_url);
+};
 
-    let query_data: any = url_parts.query;
-    //console.log("query" + JSON.stringify(query_data));
-
-    if (Object.keys(query_data).length != 0) {
-      //console.log("query" + JSON.stringify(query_data));
-      let player_response_result = {
-        status: true,
-        result: []
-      }
-
-      if (player_response_result.status) {
-        response_result = player_response_result.result;
-      }
+export const deleteRedisKey = async (
+  req: any,
+  res: any,
+  next: any
+) => {
+  let response_msg = "emsg=Something went wrong in deleteRedisKey";
+  try {
+    let reqData = req.params;
+    customLog("reqData: " + " | " + JSON.stringify(reqData));
+    const redis_key = reqData.rkId;
+    const objResponse = true;
+    if (objResponse) {
+      response_msg = "msg=Redis Key Removed";
+    } else {
+      response_msg = "msg=Redis Key not Removed";
     }
-
-    //console.log("response_result" + JSON.stringify(response_result));
-
-    return res.render("player", {
-      title: "Manage Player",
-      model_title: "Player Details",
-      response_result: response_result,
-      filter_query: query_data,
-      reset_url: reset_url,
-    });
-  };
-
-}
+  } catch (error: any) {
+    logger.error("deleteRedisKey : " + " | " + error.stack?.toString());
+  }
+  let red_url = "/manage-redis-keys?" + response_msg;
+  res.redirect(red_url);
+};

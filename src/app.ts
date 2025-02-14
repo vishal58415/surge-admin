@@ -1,43 +1,22 @@
-import express from "express";
-import session from "express-session"; // taking express session
-import * as bodyParser from "body-parser";
-import Environment from "./config/global";
-import path from "path";
-import { Routes } from "./routes/index"; // import route & attach to main config
-import expressLayouts from 'express-ejs-layouts';
+import { IS_LIVE_ENVIRONMENT, APPLICATION_VERSION } from "./configs/constants";
+import { testFunctions } from "./test";
+import { createMongoDBConnection } from "./lib/mongoClient";
+import { logger } from "./lib/logger";
 
-// Defining all configuration here
+export const startServices = (async (sInstance: any) => {
+    try {
+        await createMongoDBConnection();
 
-class App {
-  public app: express.Application;
-  public routePrv: Routes = new Routes();
+        console.log("APPLICATION_VERSION : " + " | " + APPLICATION_VERSION);
+        console.log("IS_LIVE_ENVIRONMENT : " + " | " + IS_LIVE_ENVIRONMENT);
 
-  constructor() {
-    this.app = express();
-    this.config();
-    this.routePrv.routes(this.app);
-  }
-
-  private config(): void {
-    // support application/json type post data
-    this.app.use(expressLayouts);
-    // this.app.set('layout', 'layouts/layout');
-    this.app.use(bodyParser.json());
-    this.app.set("views", path.join("views/Layouts"));
-    this.app.set("view engine", "ejs"); // set view engine path
-    this.app.set('trust proxy', true);
-    this.app.use(express.static(path.join("public")));
-    this.app.use(
-      session({
-        // session configuration
-        secret: "sp-admin",
-        resave: true,
-        saveUninitialized: true,
-      })
-    );
-    this.app.locals.config = Environment; // making Environment Class constant to global available for ejs & node js
-    //support application/x-www-form-urlencoded post data
-    this.app.use(bodyParser.urlencoded({ extended: false }));
-  }
-}
-export default new App().app;
+        if (IS_LIVE_ENVIRONMENT) {
+            console.log("IS_LIVE_ENVIRONMENT");
+        } else {
+            await testFunctions();
+        }
+    } catch (error: any) {
+        // send mail or sms
+        logger.error("startServices error : " + " | " + error.stack?.toString());
+    }
+});

@@ -77,14 +77,7 @@ routes.get(routesConstants.public_routes.two_step_verification, authController.i
 
 // --------------- ( Main ) ----------------------
 
-routes.get(routesConstants.public_routes.deals_dashboard, authController.isNonAuthenticated, (req, res, next) => {
-  res.render(routesConstants.index, {
-    title: "Dashboard - CRMS admin template",
-    layout: routesConstants.index_layout,
-    page_path: "dashboard/deals-dashboard",
-  });
-});
-
+routes.get(routesConstants.public_routes.deals_dashboard, authController.isNonAuthenticated, adminController.deals_dashboard);
 
 routes.get(routesConstants.public_routes.projects_dashboard, authController.isNonAuthenticated, (req, res, next) => {
   res.render(routesConstants.index, {

@@ -29,7 +29,7 @@
       <div class="card flex-fill">
         <div class="card-header border-0 pb-0">
           <div class="d-flex align-items-center justify-content-between flex-wrap row-gap-3">
-            <h4><i class="ti ti-grip-vertical me-1"></i>Recently Created Deals</h4>
+            <h4><i class="ti ti-grip-vertical me-1"></i><%= data.title %></h4>
             <div class="dropdown">
               <a class="dropdown-toggle" data-bs-toggle="dropdown" href="javascript:void(0);">
                 <i class="ti ti-calendar-check me-2"></i>Last 30 days
@@ -48,7 +48,7 @@
         </div>
         <div class="card-body">
           <div class="table-responsive custom-table">
-            <table class="table dataTable" id="deals-project"> 
+            <table class="table dataTable" id="deals-projects"> 
               <thead class="thead-light">
                 <tr>
                   <th>Deal Name</th>
@@ -59,7 +59,19 @@
                 </tr>
               </thead>
               <tbody>
-
+                <% if(Object.keys(data.newDeals).length!=0){%>
+                  <% var i=1; Object.keys(data.newDeals).forEach(function(key){ %>
+                    <tr class="odd">
+                      <td><%=  data.newDeals[key]['deal_name'] %></td>
+                      <td><%=  data.newDeals[key]['stage'] %></td>
+                      <td><%=  data.newDeals[key]['deal_value'] %></td>
+                      <td><%=  data.newDeals[key]['probability'] %></td>
+                      <td><span class="badge badge-pill  bg-danger"><%=  data.newDeals[key]['status'] %></span></td>
+                    </tr>
+                    <%   i++;  }) %>
+                <% }else{ %> 
+                    <tr><td colspan="5" class="text-center" >No Record Found!</td></tr> 
+                <% } %>
               </tbody>
             </table>
           </div>
